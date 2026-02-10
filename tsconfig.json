@@ -38,8 +38,6 @@
   ],
   "exclude": [
     "node_modules",
-    "buried_treasure.ts",
-    "game-client.ts",
     "tests",
     "target",
     "**/*.test.ts",

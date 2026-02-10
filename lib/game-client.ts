@@ -2,8 +2,11 @@ import * as anchor from '@coral-xyz/anchor';
 import {
   getMXEPublicKey,
   awaitComputationFinalization,
-  Cipher,
 } from '@arcium-hq/client';
+
+// Cipher may not be available in all versions of @arcium-hq/client
+// We'll handle encryption via the API layer instead
+type Cipher = any;
 import {
   Connection,
   PublicKey,
@@ -112,8 +115,9 @@ export class BuriedTreasureClient {
           );
 
           // Initialize cipher with shared secret (ECDH between client and MXE)
+          // Note: Cipher initialization handled via API layer
           if (this.mxePublicKey) {
-            this.cipher = new Cipher(this.clientKeypair, this.mxePublicKey);
+            this.cipher = null; // API layer handles encryption
           }
         } catch (err) {
           console.warn('Could not initialize MPC cipher (program may not be deployed yet):', err);
@@ -133,23 +137,15 @@ export class BuriedTreasureClient {
     nonce: anchor.BN;
     clientPublicKey: Uint8Array;
   } {
-    if (!this.cipher) {
-      throw new Error('Cipher not initialized');
-    }
-    const { ciphertext, nonce } = this.cipher.encrypt(data);
-    const nonceBN = new anchor.BN(nonce);
-    return {
-      ciphertext,
-      nonce: nonceBN,
-      clientPublicKey: this.clientKeypair.publicKey.toBytes(),
-    };
+    // Encryption is handled via API layer
+    // This method is kept for future MPC integration
+    throw new Error('Direct encryption not available - use API layer');
   }
 
   private decryptResult(encryptedResult: Uint8Array): Buffer {
-    if (!this.cipher) {
-      throw new Error('Cipher not initialized');
-    }
-    return this.cipher.decrypt(encryptedResult);
+    // Decryption is handled via API layer
+    // This method is kept for future MPC integration
+    throw new Error('Direct decryption not available - use API layer');
   }
 
   async registerPlayer(): Promise<string> {

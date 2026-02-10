@@ -59,12 +59,13 @@ export function GameBoard() {
     try {
       const result = await client.explore(x, y);
       if (result.success) {
+        const message = result.message || 'Explored tile';
         if (result.tileType === 'treasure') {
-          addEvent('treasure', result.message);
+          addEvent('treasure', message);
         } else if (result.tileType === 'trap') {
-          addEvent('trap', result.message);
+          addEvent('trap', message);
         } else {
-          addEvent('info', result.message);
+          addEvent('info', message);
         }
       } else {
         addEvent('system', result.error || 'Explore failed');
@@ -86,12 +87,13 @@ export function GameBoard() {
     try {
       const result = await client.dig(x, y);
       if (result.success) {
+        const message = result.message || 'Dug at tile';
         if (result.foundType === 'treasure') {
-          addEvent('treasure', result.message);
+          addEvent('treasure', message);
         } else if (result.foundType === 'trap') {
-          addEvent('trap', result.message);
+          addEvent('trap', message);
         } else {
-          addEvent('info', result.message);
+          addEvent('info', message);
         }
       } else {
         addEvent('system', result.error || 'Dig failed');

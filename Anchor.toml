@@ -3,10 +3,10 @@ seeds = false
 skip-lint = false
 
 [programs.localnet]
-buried_treasure = "BuRiEdTrEaSuRe111111111111111111111111111"
+buried_treasure = "EdRkkqe1psz9MJJtSSFcpC99h9VWzT6MvLTGjDG3ppyA"
 
 [programs.devnet]
-buried_treasure = "BuRiEdTrEaSuRe111111111111111111111111111"
+buried_treasure = "EdRkkqe1psz9MJJtSSFcpC99h9VWzT6MvLTGjDG3ppyA"
 
 [programs.mainnet]
 # Update this with your deployed program ID after deployment

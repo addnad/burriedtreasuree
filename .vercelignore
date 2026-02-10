@@ -8,3 +8,8 @@ target
 .anchor
 test-ledger
 mnt
+buried_treasure.ts
+game-client.ts
+tests
+*.test.ts
+*.spec.ts

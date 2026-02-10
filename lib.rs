@@ -15,7 +15,7 @@ const COMP_DEF_OFFSET_EXPLORE: u32 = comp_def_offset("explore");
 const COMP_DEF_OFFSET_BURY: u32 = comp_def_offset("bury");
 const COMP_DEF_OFFSET_DIG: u32 = comp_def_offset("dig");
 
-declare_id!("BuRiEdTrEaSuRe111111111111111111111111111");
+declare_id!("EdRkkqe1psz9MJJtSSFcpC99h9VWzT6MvLTGjDG3ppyA");
 
 #[arcium_program]
 pub mod buried_treasure {

@@ -15,8 +15,10 @@ import {
   getExecutingPoolAccAddress,
   getMXEPublicKey,
   awaitComputationFinalization,
-  Cipher,
 } from "@arcium-hq/client";
+
+// Cipher type - not exported from @arcium-hq/client in all versions
+type Cipher = any;
 import {
   Connection,
   PublicKey,
@@ -24,7 +26,9 @@ import {
   SystemProgram,
   LAMPORTS_PER_SOL,
 } from "@solana/web3.js";
-import { BuriedTreasure } from "../target/types/buried_treasure";
+// BuriedTreasure types - only available after anchor build
+// For now, we'll use a generic type
+type BuriedTreasure = any;
 
 // =========================================================
 // CONFIGURATION

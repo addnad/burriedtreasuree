@@ -11,16 +11,8 @@ const nextConfig = {
         crypto: false,
       };
     }
-    // Exclude test files and Anchor-generated types from build
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '../target/types/buried_treasure': false,
-      './target/types/buried_treasure': false,
-    };
     return config;
   },
-  // Exclude test files from build
-  pageExtensions: ['ts', 'tsx', 'js', 'jsx'],
 };
 
 module.exports = nextConfig;

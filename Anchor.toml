@@ -1,0 +1,23 @@
+[features]
+seeds = false
+skip-lint = false
+
+[programs.localnet]
+buried_treasure = "BuRiEdTrEaSuRe111111111111111111111111111"
+
+[programs.devnet]
+buried_treasure = "BuRiEdTrEaSuRe111111111111111111111111111"
+
+[programs.mainnet]
+# Update this with your deployed program ID after deployment
+# buried_treasure = "YOUR_DEPLOYED_PROGRAM_ID_HERE"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "Mainnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "npx ts-mocha -p ./tsconfig.json -t 120000 tests/**/*.ts"

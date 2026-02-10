@@ -1,0 +1,12 @@
+[arcium]
+version = "0.1.0"
+
+[mxe]
+name = "buried_treasure"
+cluster_offset = 0
+
+[encrypted_instructions]
+path = "encrypted-ixs/src"
+
+[build]
+output = "target/arcium"
